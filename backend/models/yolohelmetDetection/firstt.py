@@ -1,1 +1,1 @@
-print("Gaurang write you code here")
+print("Gaurang Enter your code here")
