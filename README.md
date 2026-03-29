@@ -1,64 +1,101 @@
-# 🚦 Sentinel
+# 🚦 Sentinel: AI-Powered Urban Traffic Management
 
-> **An Automated Traffic Violation Detection System designed to eliminate the inefficiencies of human-heavy surveillance, ensuring smarter, safer, and self-regulating urban mobility.**
+> **A scalable, automated Traffic Violation Detection System designed to replace inefficient manual surveillance with high-precision, AI-driven enforcement for Smart City infrastructure.**
 
 ---
 
 ## 🌍 The Problem
 
-In rapidly urbanizing smart cities, relying on manual, human-heavy surveillance for traffic management is proving highly inefficient, costly, and error-prone. Countless violations go undetected during peak hours or adverse conditions, leading to increased accidents, fatal injuries, and widespread traffic congestion. 
+In rapidly urbanizing smart cities, relying on human-heavy manual surveillance is inefficient, costly, and prone to oversight. During peak hours or adverse weather, critical violations—like helmetless riding, signal jumping, and illegal parking—often go undetected, directly contributing to increased accidents and urban gridlock.
 
-**Sentinel** was built to solve this by bringing a scalable, AI-driven automation layer directly to modern urban infrastructure.
+**Sentinel** provides a scalable automation layer for modern infrastructure, ensuring 24/7 compliance and safer road ecosystems.
 
 ---
 
 ## ✨ Core Features
 
-Our solution targets three critical pillars of modern traffic management:
+Sentinel targets the three primary pillars of modern traffic regulation:
 
-- 🛑 **Rule Enforcement:** Automated, split-second detection of signal jumping and wrong-lane driving.
-- ⛑️ **Safety Monitoring:** Real-time helmetless riding detection to effortlessly enforce proactive gear usage.
-- 🅿️ **Urban Management:** Continuous identification of illegal parking to drastically reduce gridlocks and keep city arteries clear.
+- 🛑 **Rule Enforcement:** Real-time detection of signal jumping and wrong-lane driving using spatial heuristics.
+- ⛑️ **Safety Monitoring:** Automated helmetless riding detection to enforce proactive safety gear compliance.
+- 🅿️ **Urban Management:** Continuous monitoring of restricted zones to identify illegal parking and reduce congestion.
 
 ---
 
-## 🧠 Backend Intelligence (The Models)
+## 🛠️ Tech Stack
 
-The true brain of Sentinel resides in its advanced deep learning backend. Our architecture relies on a suite of **five** specialized computer vision models working concurrently to monitor and alert on diverse road scenarios. 
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![YOLOv8](https://img.shields.io/badge/YOLOv8-00FFFF?style=for-the-badge&logoColor=black)
 
-*(Note: These models represent our comprehensive roadmap. While parts are under active development, the full model suite will be deployed soon!)*
+---
 
-1. 🏍️ **YOLO Helmet Detection** (`yolohelmetDetection`): Scans two-wheelers in real-time to capture compliance for mandatory safety helmets.
-2. 🚫 **Wrong Lane Driving Detection** (`wrongLaneDrivingDetection`): Flags vehicles driving against the flow of traffic or violating strict lane dividers.
-3. 🅿️ **Illegal Parking Detection** (`illegalParkingDetection`): Constantly monitors no-parking zones and automatically flags static, illegally parked vehicles.
-4. ⏱️ **YOLO Speed / Signal Violation Detection** (`yoloSpeedDetection`): Accurately tracks vehicle trajectories to capture speeders and signal jumpers.
-5. 🚥 **Dynamic Traffic Signal Adjustment** (`dynamicTrafficSignalTime`): Evaluates intersection density dynamically, adjusting signal timings in real-time to optimize flow.
+## 🧠 Intelligence Engine (The Model Suite)
+
+Sentinel's backend consists of specialized deep learning modules designed for concurrent execution:
+
+1. 🏍️ **YOLO Helmet Detection:** Scans two-wheelers to capture compliance with mandatory safety gear.
+2. 🚫 **Wrong Lane Detection:** Flags vehicles driving against traffic flow or violating lane dividers.
+3. 🅿️ **Illegal Parking Monitor:** Automatically flags static vehicles in restricted no-parking zones.
+4. ⏱️ **Trajectory Violation Logic:** Tracks vehicle paths to accurately capture speeders and signal jumpers.
+5. 🚥 **Dynamic Density Evaluation:** Analyzes intersection density to provide data for real-time signal timing optimization.
 
 ---
 
 ## ⚙️ Technical Architecture
 
-Sentinel relies on a highly optimized, state-of-the-art pipeline designed for ultra-low latency edge or cloud inference:
+The system follows a high-performance pipeline designed for low-latency edge or cloud inference:
 
-**📹 Live Video Stream ➡️ 🔍 Pre-processing ➡️ 👀 YOLO Object Detection ➡️ ⚖️ Violation Logic ➡️ 🚨 Alert System**
+**📹 Ingestion ➡️ 🔍 Pre-processing ➡️ 👀 Inference ➡️ ⚖️ Violation Logic ➡️ 🚨 Alerting**
 
-1. **Live Video Stream:** Continuous, robust feeds ingested directly from municipal CCTV cameras.
-2. **Pre-processing:** Frame extraction, perspective correction, and noise reduction.
-3. **YOLO Object Detection:** Rapid multi-model inference to classify targets like cars, bikes, pedestrians, and helmets.
-4. **Violation Logic:** Spatio-temporal heuristics matching vehicle coordinates against defined road zones (e.g., solid lines, zebra crossings).
-5. **Alert System:** Immediate generation of actionable violations, seamless database logging, and real-time dashboard notifications.
+| Stage | Description |
+|---|---|
+| **Ingestion** | Robust feed handling from municipal CCTV infrastructure |
+| **Pre-processing** | Frame extraction, perspective correction, and noise filtering |
+| **Inference** | Rapid multi-model YOLO execution to classify targets (Vehicles, Pedestrians, Helmets) |
+| **Violation Logic** | Spatio-temporal matching of vehicle coordinates against defined road boundary zones |
+| **Alerting** | Real-time generation of violation logs, database entry, and dashboard notifications |
+
+---
+
+## 📸 Demo
+
+> Add a screenshot or GIF of detection in action here.
+```
+assets/demo.gif
+```
+
+---
+
+## 🚀 Getting Started
+```bash
+# Clone the repository
+git clone https://github.com/gaurangpatil97/sentinel
+
+# Navigate into the project
+cd sentinel
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run on webcam
+python main.py --source 0
+
+# Run on a video file
+python main.py --source path/to/video.mp4
+```
 
 ---
 
 ## 🏆 Impact & Vision
 
-Sentinel is structurally designed as a **production-ready, enterprise-grade solution for modern municipalities**. 
+Sentinel is designed as a production-ready solution for modern municipalities. By enforcing compliance with 24/7 precision, it delivers measurable outcomes for Smart City initiatives:
 
-By capturing non-compliance with 24/7 unblinking precision, Sentinel achieves unprecedented outcomes for Smart City initiatives:
-- 📉 **Reduces Accidents:** Active enforcement of rules dramatically curbs reckless behavior.
-- 🛡️ **Improves Road Safety:** Ensuring helmet compliance and lane discipline builds a fundamentally safer driving culture.
-- 🏙️ **Elevates Urban Living:** Automates the hardest aspects of municipal traffic management, freeing human enforcement officers to handle higher-level tasks and interventions.
+- 📉 **Reduces Accidents:** Active enforcement curbs reckless behavior at scale.
+- 🛡️ **Improves Road Safety:** Helmet compliance and lane discipline build a fundamentally safer driving culture.
+- 🏙️ **Elevates Urban Living:** Automates the hardest aspects of traffic management, freeing human officers for higher-level interventions.
 
-<br>
+---
 
-**Built to protect, optimize, and power the smart cities of tomorrow.**
+*Built to protect, optimize, and power the smart cities of tomorrow.*
